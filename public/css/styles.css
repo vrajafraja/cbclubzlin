@@ -1,0 +1,69 @@
+body {
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+.main {
+    margin: 0 auto;
+    padding: 16px;
+}
+
+h1 {
+    color: yellow;
+    font-size: 26px;
+}
+
+a {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+.main__positions {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__positions a {
+    padding: 5px;
+}
+
+.main__solar {
+    padding: 5px;
+}
+
+.main__flag-counter {
+    padding: 15px;
+}
+
+.main__flag-counter img {
+    outline: 1px solid black;
+    outline-offset: -1px;
+}
+
+.main__info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.main__info__item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.main__info__label {
+    display: inline;
+    flex-direction: column;
+}
+
+.main__info__value {
+    color: yellow;
+    display: inline;
+}
