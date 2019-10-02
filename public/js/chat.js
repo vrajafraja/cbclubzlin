@@ -1,6 +1,17 @@
+const webToken = 'CBCLUBZLIN_CHAT_TOKEN';
+
 class Chat {
     constructor() {
         this._showMessages();
+        this._webToken = window.localStorage.getItem(webToken);
+        if (!this._webToken) {
+            window.localStorage.setItem(webToken, this._generateToken());
+            this._webToken = window.localStorage.getItem(webToken);
+        }
+    }
+
+    _generateToken() {
+        return Math.random().toString(36).substr(2) + Math.random().toString(36).substr(2);
     }
 
     async _loadMessages() {
@@ -24,13 +35,14 @@ class Chat {
     createLineDOMElement(lineData) {
         const line = document.createElement('div');
         line.className = 'message';
-
-        const deleteButton = document.createElement('button');
-        deleteButton.name = lineData['id'];
-        deleteButton.innerHTML = 'Smazat';
-        deleteButton.className = 'message__delete-button';
-        deleteButton.onclick = (e) => CHAT.deleteMessage(e);
-        line.appendChild(deleteButton);
+        if (lineData.webToken === this._webToken) {
+            const deleteButton = document.createElement('button');
+            deleteButton.name = lineData['id'];
+            deleteButton.innerHTML = 'Smazat';
+            deleteButton.className = 'message__delete-button';
+            deleteButton.onclick = (e) => CHAT.deleteMessage(e);
+            line.appendChild(deleteButton);
+        }
 
         const date = document.createElement('div');
         date.innerHTML = new Date(lineData['date']).toLocaleDateString();
@@ -55,7 +67,7 @@ class Chat {
         const author = context.form[0].value;
         const message = context.form[1].value;
         if (author && message) {
-            const data = { author, message };
+            const data = { author, message, webToken: this._webToken };
             fetch('api/message', {
                 method: 'POST', body: JSON.stringify(data), headers: {
                     'Content-Type': 'application/json'
