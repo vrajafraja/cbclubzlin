@@ -45,6 +45,17 @@ a:visited {
     outline-offset: -1px;
 }
 
+.main__chatbox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.main__chatbox.p{
+    padding: 10px
+}
+
 .main__info {
     display: flex;
     justify-content: center;
@@ -58,6 +69,11 @@ a:visited {
     flex-direction: column;
 }
 
+.main__info__item--about {
+    display: flex;
+    flex-direction: column;;
+}
+
 .main__info__label {
     display: inline;
     flex-direction: column;
@@ -66,4 +82,58 @@ a:visited {
 .main__info__value {
     color: yellow;
     display: inline;
+}
+
+.messages {
+    background: #191919;
+    min-height: 50px;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.message {
+    margin: 10px;
+    background: #fefefe;
+    color: black;
+    border-radius: 5px;
+    text-align: left;
+    padding: 10px;
+}
+
+
+.message__author {
+    font-weight: 800;
+}
+
+.message__message {
+    margin-top: 10px;
+}
+
+textarea {
+    min-height: 30px;
+    height: 30px;
+    width: 90%;
+    padding: 7px;
+}
+
+.message__input{
+    display: flex;
+    max-width: 90%;
+    margin: auto;
+}
+
+.send__author {
+    height: 30px;
+}
+
+.send__button {
+    margin-top: 10px;
+}
+
+form {
+    padding-top: 15px;
+}
+
+.message__delete-button {
+    float: right;
 }

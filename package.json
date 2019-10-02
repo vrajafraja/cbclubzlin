@@ -1,10 +1,11 @@
 {
   "name": "cbclubzlin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Webpage for cb club zlin",
   "main": "cbclubzlin.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0"
   },
   "devDependencies": {},
   "scripts": {

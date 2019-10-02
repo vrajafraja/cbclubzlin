@@ -1,25 +1,37 @@
 <html>
     <head>
-        <title>CB, PMR, AMA KLUB ZLIN</title>
+        <title>CB, PMR, AMA KLUB ZLÍN</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="js/chat.js"></script>
     </head>
     <body>
         <div class="main">
             <h1>CB CLUB ZLIN INFO PAGE</h1>
             <div class="main__info">
-                <div class="main__info__item">
-                    <div class="main__info__label">KDO JSME:</div><div class="main__info__value"> Skupinka lidi prastenych antenou:)</div></br></br>
-
-
-
-			<div class="main__info__label">
-				<script type="text/javascript" src="http://miniaplikace.blueboard.cz/widget-infoboard-o44jf82b2tv9v9kf1avtbt4m7dexxj"></script></center>
-					<center><iframe frameborder="0" scrolling="no" width="800" height="200" src="http://miniaplikace.blueboard.cz/shoutboard.php?hid=rv0x3iih8aa0aren9irfmxe1jbm32k">
-						<a href="http://miniaplikace.blueboard.cz/shoutboard.php?hid=rv0x3iih8aa0aren9irfmxe1jbm32k">ShoutBoard od BlueBoard.cz</a>
-							</iframe></center></div>
-
+                <div class="main__info__item--about">
+                    <div class="main__info__label">
+                        KDO JSME:
+                    </div>
+                    <div class="main__info__value">
+                        Skupinka lidí praštěných anténou:)
+                    </div>
+                </div>
             </div>
-                   <div class="main__flag-counter">
+            <div class="main__chatbox">
+                <p>
+                    Vzkazník
+                </p>
+                <div id="messages" class="messages">
+                </div>
+                <form name="sendMessage">
+                    <div class="message__input">
+                        <input type="text" name="author" placeholder="Autor vzkazu" class="send__author"/>
+                        <textarea name="message" placeholder="zde zanech vzkaz"></textarea>
+                    </div>
+                    <input type="button" type="submit" value="odeslat vzkaz" onclick="return CHAT.sendMessage(this)" class="send__button"/>
+                </form>
+            </div>
+            <div class="main__flag-counter">
                 <a href="https://info.flagcounter.com/1qyj">
                     <img src="https://s05.flagcounter.com/count2/1qyj/bg_000000/txt_F7FF0A/border_575757/columns_8/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
                 </a>
